@@ -1,7 +1,11 @@
 # 🖼️ Image Converter
 
 **Image Converter** is a simple image conversion tool written in **Python**, created as a side project.
-
+<p align="center">
+  <a href="https://github.com/NoNameiqz/imageconverter/releases/latest">
+    <img src="https://img.shields.io/badge/Download-Latest%20Release-brightgreen?style=for-the-badge" alt="Download Latest Release">
+  </a>
+</p>
 ## 📌 Project Information
 - **Version:** 1.0  
 - **Author:** NoNameiqz  
