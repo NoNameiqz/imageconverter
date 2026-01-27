@@ -2,6 +2,7 @@ import customtkinter as ctk
 import tkinter
 import main_app as cv
 import os
+from datetime import datetime
 
 #variables
 total_converted = 0
@@ -15,18 +16,25 @@ def button1_event():
     #print(op_value.get())
     #print(total_converted)
 
-
-    converted = cv.converter(op_menu.get(),entry_filename.get(),entry_filename2.get())
+    converted,logs = cv.converter(op_menu.get(),entry_filename.get(),entry_filename2.get())
     if converted:
         total_converted += 1
         if total_converted == 1:
             converted_label.pack(pady=10)
         converted_label.configure(text=f"({total_converted}x) Converted!!!",text_color="green")
+        with open("logs.txt", "a", encoding="utf-8") as f:
+            date = datetime.now()
+            date = date.strftime("%d/%m/%Y %H:%M:%S")
+            f.write(f"{date} - Status: converted to {op_menu.get()} with filename ({logs})\n")
     else:
         failed_converted += 1
         if failed_converted == 1:
             converted_label.pack(pady=10)
         converted_label.configure(text=f"({failed_converted}x) Failed to convert\nCheck logs!",text_color="red")
+        with open("logs.txt", "a", encoding="utf-8") as f:
+            date = datetime.now()
+            date = date.strftime("%d/%m/%Y %H:%M:%S")
+            f.write(f"{date} - Status: failed to convert filename ({entry_filename.get()}) with error: {logs}\n")
 #apearence
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("_internal/themes/midnight.json")
