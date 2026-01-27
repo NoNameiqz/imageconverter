@@ -2,7 +2,7 @@ from wand.image import Image
 
 def converter(output_type,input_name="",output_name=""):
     if input_name == "":
-        return False
+        return False, "Empty file path"
     try:
         with Image(filename=input_name) as img:
             img.format = output_type
@@ -11,9 +11,9 @@ def converter(output_type,input_name="",output_name=""):
             else:
                 output = output_name + "." + output_type
             img.save(filename=output)
-        return True
-    except Exception:
-        return False
+        return True, output
+    except Exception as e:
+        return False, e
 
 
 
