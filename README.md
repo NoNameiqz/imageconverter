@@ -6,6 +6,8 @@
     <img src="https://img.shields.io/badge/Download-Latest%20Release-brightgreen?style=for-the-badge" alt="Download Latest Release">
   </a>
 </p>
+
+
 ## 📌 Project Information
 - **Version:** 1.0  
 - **Author:** NoNameiqz  
