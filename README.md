@@ -9,9 +9,9 @@
 
 
 ## 📌 Project Information
-- **Version:** 1.0  
+- **Version:** 1.1  
 - **Author:** NoNameiqz  
-- **Release Date:** 27/01/2026  
+- **Release Date:** 24/02/2026  
 
 ---
 
