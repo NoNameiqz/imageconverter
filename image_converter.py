@@ -1,13 +1,18 @@
 import customtkinter as ctk
-import tkinter
 import main_app as cv
 import os
 from datetime import datetime
-
+from tkinter import filedialog
 #variables
 total_converted = 0
 failed_converted = 0 
 #functions
+def browse_files():
+    path = filedialog.askopenfilename(title="Choose an image",filetypes=[("Image files", "*.png *.jpg *.webp *.gif *.tiff *.bmp *.pdf *.svg *.ico")])
+    if path:
+        # wprint(path)
+        entry_filename.delete(0,ctk.END)
+        entry_filename.insert(0,path)
 def buttonsp_event():
     os.system("start https://discord.com/invite/Bz5C2Gt6rZ")
 def button1_event():
@@ -60,13 +65,15 @@ frame1 = ctk.CTkFrame(left_frame,width=350,height=220)
 frame1.pack(side="top",padx=20,pady=10)
 frame1.pack_propagate(False)
 one_entry_text = ctk.CTkLabel(frame1,text="Single File Conversion",font=("Inter",18,"bold"))
-one_entry_text.pack(pady=(15,10))
+one_entry_text.pack(pady=(15,6))
 entry_text = ctk.CTkLabel(frame1, text="Input Path:",width=100,font=("Inter",14))
 entry_text.pack(padx=10)
 entry_filename = ctk.CTkEntry(frame1, placeholder_text="example: resources/image.svg",width=200)
-entry_filename.pack(pady=(0,25),padx=40) 
+entry_filename.pack(pady=(0,5),padx=40) 
+browse_button = ctk.CTkButton(frame1, text="Browse files",command=browse_files)
+browse_button.pack(padx=10,pady=(0,10))
 
-entry_text2 = ctk.CTkLabel(frame1, text="Output Path (optional):",width=100,font=("Inter",14))
+entry_text2 = ctk.CTkLabel(frame1, text="Output file name (optional):",width=100,font=("Inter",14))
 entry_text2.pack(padx=10)
 entry_filename2 = ctk.CTkEntry(frame1, placeholder_text="example: image1 (without .png)",width=200)
 entry_filename2.pack(padx=40) 
