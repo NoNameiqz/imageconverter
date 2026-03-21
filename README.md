@@ -53,8 +53,12 @@ This is a side project, so updates may take some time.
 ---
 
 ## 📄 License
-This project is currently for personal and educational use.
+This project is provided for personal and educational use only.
 
+You are free to use, modify, and adapt the code for your own personal projects.
+However, you are **not allowed** to use this code for commercial purposes, including selling, distributing, or using it in any professional or business-related projects.
+
+If you wish to use this project for commercial purposes, please contact me.
 ---
 
 ## ⭐ Notes
