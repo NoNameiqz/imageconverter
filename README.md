@@ -9,9 +9,9 @@
 
 
 ## 📌 Project Information
-- **Version:** 1.1  
+- **Version:** 2.0  
 - **Author:** NoNameiqz  
-- **Release Date:** 24/02/2026  
+- **Release Date:** 21/03/2026  
 
 ---
 
@@ -40,7 +40,6 @@ For best results, always use high-quality images.
 This is a side project, so updates may take some time.
 
 ### Planned Features
-- Convert multiple images at once (batch conversion)
 - Basic image editing:
   - Resize images
 
