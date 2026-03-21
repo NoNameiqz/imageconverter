@@ -7,7 +7,7 @@ def converter(output_type,input_name="",output_name=""):
         with Image(filename=input_name) as img:
             img.format = output_type
             if output_name == "":
-                output = f"output.{output_type}"
+                output = f"coverted.{output_type}"
             else:
                 output = output_name + "." + output_type
             img.save(filename=output)
@@ -19,4 +19,6 @@ def converter(output_type,input_name="",output_name=""):
 
 
 #converter("png","resources/input.svg")
+
+
 
