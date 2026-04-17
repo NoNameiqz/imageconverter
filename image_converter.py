@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 from tkinter import filedialog
 from pathlib import Path
+
 #variables
 total_converted = 0
 failed_converted = 0 
@@ -19,7 +20,7 @@ def writeLogs(name: str, logs : str, op : bool):
                 f.write(f"{date} - Status: [ERROR] - failed to convert filename ({name}) with error: {logs}\n")
 
 def browse_single_files():
-    path = filedialog.askopenfilename(title="Choose an image",filetypes=[("Image files", "*.png *.jpg *.webp *.gif *.tiff *.bmp *.pdf *.svg *.ico")])
+    path = filedialog.askopenfilename(title="Choose an image",filetypes=[("Image files", "*.png *.jpg *.jpeg *.webp *.gif *.ico *.tiff *.bmp *.im *.ppm")])
     if path:
         # wprint(path)
         entry_filename.delete(0,ctk.END)
@@ -27,11 +28,17 @@ def browse_single_files():
 
 def browse_multi_files():
     global files
-    files = filedialog.askopenfilenames(title="Choose an image",filetypes=[("Image files", "*.png *.jpg *.webp *.gif *.tiff *.bmp *.pdf *.svg *.ico")])
+    files = filedialog.askopenfilenames(title="Choose an image",filetypes=[("Image files", "*.png *.jpg *.jpeg *.webp *.gif *.ico *.tiff *.bmp *.im *.ppm")])
     multifiles_label.configure(text=f"{len(files)} Files selected")
+
+
+
 
 def buttonsp_event():
     os.system("start https://discord.com/invite/Bz5C2Gt6rZ")
+    os.system("start https://github.com/NoNameiqz/imageconverter")
+def buttonsp2_event():
+    os.system("start https://prnt.sc/bTONG5Tmcw2b")
 
 def button1_event():
     global total_converted
@@ -94,7 +101,7 @@ ctk.set_default_color_theme("_internal/themes/midnight.json")
 #app object
 app = ctk.CTk()
 app.geometry("640x480")
-app.title("Image Converter - By NoNameiqz")
+app.title("Image Converter - By NoNameiqz - V3.0")
 app.iconbitmap("_internal/icon.ico")
 
 #frame and widgets
@@ -141,7 +148,7 @@ brwose_button_2.pack()
 frame3 = ctk.CTkFrame(right_frame,width=200,height=300)
 frame3.pack(pady=(70,0),padx=15)
 frame3.pack_propagate(False)
-op_values = ["png","jpg","webp","gif","tiff","bmp","pdf","svg","ico"]
+op_values = ["png","jpeg","webp","gif","ico","tiff","bmp","im","ppm"]
 op_value = ctk.StringVar(value="png")
 label_op = ctk.CTkLabel(frame3,text="Output format:",font=("Inter",14))
 label_op.pack(pady=(60,0))
@@ -154,8 +161,9 @@ button2.pack(pady=(10,0))
 converted_label = ctk.CTkLabel(frame3,font=("Inter",14,"bold"))
 
 #support/credits
-support_button = ctk.CTkButton(right_frame,text="Support/Updates",fg_color="blue",hover_color="#000d61",command=buttonsp_event)
+support_button = ctk.CTkButton(right_frame,text="(?) Support/Updates",fg_color="blue",hover_color="#000d61",command=buttonsp_event)
 support_button.pack(pady=(30,0))
-
+support_button2 = ctk.CTkButton(right_frame, text="(?) Suported File Types", fg_color="green", hover_color="#003d05", command=buttonsp2_event)
+support_button2.pack(pady=(10,0))
 #app main loop
 app.mainloop()
